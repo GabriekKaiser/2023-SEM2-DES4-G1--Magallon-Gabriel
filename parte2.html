@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte# 2</title>
+    <style>
+
+
+        body{
+            background-color: rgb(24, 23, 23);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            display: flex;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            background-color: rgb(29, 29, 29);
+            padding: 30px;
+            border-width: 10px;
+            border-radius: 10px;
+            border-color: aliceblue;
+        }
+
+        .form_tittle{
+            align-self: center;
+            background-color: rgb(2, 70, 216);
+            font-size: 25px;
+        }
+
+        .form_group{
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(2, 70, 216);
+            padding: 10px;
+            width: 300px;
+            gap: 10px;
+            border-radius: 10px;
+        }
+
+        .button{
+            display: flex;
+            background-color: rgb(2, 70, 216);
+            padding: 3px;
+            width: 60px;
+            justify-content: center;
+            margin-left: 125px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <form class="form" id="form-acc">
+        <h3 class="form_tittle">Sign In</h3>
+
+        <div class="form_group">
+            <label for="">Ingrese su Correo:</label>
+            <input type="text" name="correo" id="input-correo" placeholder=" "/>
+        </div>
+
+        <div class="form_group">
+            <label for="">Ingrese la Contraseña:</label>
+            <input type="text" name="contrasena" id="input-contrasena"/>
+        </div>
+
+        <div class="button">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    
+    <script>
+            function onFormSubmit(e) {
+                e.preventDefault();
+                const correo = document.getElementById("input-correo").value;
+                const contrasena = document.getElementById("input-contrasena").value;
+                console.log({ correo, contrasena });
+            }
+
+            const form = document.getElementById("form-acc");
+            form.addEventListener("submit", onFormSubmit);
+    </script>
+
+</body>
+
+
+
+
+</html>
