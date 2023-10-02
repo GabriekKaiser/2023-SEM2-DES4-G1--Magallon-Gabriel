@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio #6</title>
+    <link rel="stylesheet" href="lab6style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="generator">Generator de numeros aleatorios</div>
+        <form action="#" id="formcal">
+            <div class="details-user">
+                <div class="input">
+                    <span class="details">Initial</span>  
+                    <input type="text" placeholder="write valor number" id="initialInput"/>
+                </div>
+                <div class="input">
+                    <span class="details">Final</span>  
+                    <input type="text" placeholder="write final valor" id="finalInput"/>
+                </div>
+                
+            </div>
+            <div class="button">
+                <input type="submit" value="Calcular">
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('formcal').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const initial = parseInt(document.getElementById('initialInput').value);
+            const final = parseInt(document.getElementById('finalInput').value);
+
+            if (isNaN(initial) || isNaN(final)) {
+                console.log("Ingresar el numero inicial y final");
+                return;
+            }
+
+            const ramNumber = Math.floor(Math.random() * (final - initial + 1)) + initial;
+            const binario = (ramNumber >>> 0).toString(2).padStart(8, '0');
+
+            console.log(`decimal: ${ramNumber}, a binario: ${binario}`);
+        });
+    </script>
+</body>
+</html>
