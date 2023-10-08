@@ -1,0 +1,55 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    height: 900px;
+}
+
+.piramide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.altura{
+    display: flex;
+    background-color: grey;
+    gap: 10px;
+    padding: 2px;
+}
+
+.cuadro{
+    display: flex;
+    width: 110px;
+    height: 110px;
+    align-items: center;
+    background-color: rgb(252, 249, 249);
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 30px;
+}
+.rojo{
+    display: flex;
+    width: 110px;
+    height: 110px;
+    align-items: center;
+    justify-content: center;
+    background-color:antiquewhite;
+    border: 3px solid rgb(190, 5, 5);
+    border-radius: 5px;
+    font-size: 30px;
+}
+.rojo .num{
+    color: red;
+}
+
+.num{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    rotate: 180deg;
+}
