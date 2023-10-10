@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 1px solid red;
+}
+
+body{
+    background-color: rgb(45, 45, 87);
+    width: 100%;
+    height: 100vh;
+}
+
+.arriba{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 30px 20px;
+    background-color: rgb(31, 28, 77);
+}
+
+ul{
+    display: flex;
+    width: 400px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li{
+    margin-right: 30px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+ul li a{
+    color: white;
+}
+
+
+.login{
+    display: flex;
+    width: 200px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 250px;
+}
+
+
+.cuerpo{
+    display: flex;
+    align-items: center;
+    height: 450px;
+    padding-left: 50px;
+    margin: 50px;
+    width: 400px;
+    color: aliceblue;
+}
+
+.hoja{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: 30px;
+}
+
+
+
+
+
+
+
