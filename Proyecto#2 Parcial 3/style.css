@@ -16,7 +16,6 @@ body {
   background-color: #1B3358;
 }
 
-
 main {
   display: flex;
   flex-direction: row;
@@ -25,6 +24,7 @@ main {
   gap: 3rem;
   background-color: #6DA5C0;
 }
+
 /*intruoducir cantidad*/
 h1 {
   font-size: 1rem;
@@ -107,6 +107,9 @@ button, input {
 
 #response2{
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
 
 #response2 >div{
@@ -126,5 +129,14 @@ button, input {
   font-size: 0.7rem;
 }
 
+.result{
+  width: 20px;
+  height: 20px;
+  background-color: rgb(7, 87, 20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
 /*Sum of random numbers*/
 
