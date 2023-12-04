@@ -30,7 +30,18 @@ class Numbers {
     }
 
     public void add(int value){
-    numbers.add(value);
+        numbers.add(value);
+    }
+
+    public int average(){
+        if (numbers.size() == 0){
+            return 0;
+        }
+        int suma=0;
+        for(int i=0; i < numbers.size(); i++){
+            suma += numbers.get(i);
+        }
+        return suma/numbers.size();
     }
     
 }
@@ -42,6 +53,7 @@ public class App_2 {
         get("/numeros", (req, res) -> {
             JSONObject json = new JSONObject();
             json.put("data", numbers.all());
+            json.put("average", numbers.average()); 
          return json;
         });
 
@@ -56,8 +68,9 @@ public class App_2 {
             numbers.add(value);
             JSONObject jsonResponse = new JSONObject();
             jsonResponse.put("data", numbers.all());
+            jsonResponse.put("average", numbers.average());
             return jsonResponse;
         });
-
+         
     }
 }
