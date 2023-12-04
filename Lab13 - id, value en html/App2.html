@@ -24,12 +24,12 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ value: value })
+                body: JSON.stringify({ nota: value })
             })
                 .then(response => response.json())
-                .then(value => {
+                .then(data => {
                     const response = document.querySelector('#response');
-                    response.innerHTML= JSON.stringify(value);
+                    response.innerHTML= JSON.stringify(data);
                 });
         };
         form.addEventListener('submit', onFormSubmit);

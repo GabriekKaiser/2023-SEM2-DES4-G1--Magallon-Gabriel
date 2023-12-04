@@ -2,21 +2,24 @@ package com.fourword;
 import static spark.Spark.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-class Numbers {
-    ArrayList <Integer> numbers = new ArrayList<Integer>();
-    
-    public JSONArray all(){
+class Numbers{
+    public ArrayList<Integer> number = new ArrayList<Integer>();
+
+    public void add(Integer num) {
+        number.add(num);
+    }
+
+    public JSONArray all() {
         JSONArray json = new JSONArray();
-        for(int i= 0 ; i < numbers.size(); i++){
+        for(int i = 0; i < number.size(); i++) {
             JSONObject obj = new JSONObject();
             obj.put("id", i);
-            obj.put("value", numbers.get(i));
+            obj.put("value", number.get(i));
             json.put(obj);
         }
         return json;
@@ -25,60 +28,56 @@ class Numbers {
     public JSONObject get (int id){
         JSONObject json =new JSONObject();
         json.put("id", id);
-        json.put("value", numbers.get(id));
+        json.put("value", number.get(id));
         return json;
     }
 
-    public void add(int value){
-        numbers.add(value);
-    }
-
-    public int average(){
-        if (numbers.size() == 0){
+    public int average() {
+        if (number.size() == 0) {
             return 0;
         }
-        int suma=0;
-        for(int i=0; i < numbers.size(); i++){
-            suma += numbers.get(i);
+        int suma = 0;
+        for (int i = 0; i < all().length(); i++) {
+            suma += number.get(i);
         }
-        return suma/numbers.size();
+        return suma / number.size();
     }
-    
 }
 
 
+
 public class App2 {
+
     public static void main(String[] args) {
-        Numbers numbers = new Numbers();
+
+        Numbers number = new Numbers();
         System.out.println("Executing on port: 4567");
         enableCors();
         get("/numeros", (req, res) -> {
             res.type("application/json");
             JSONObject json = new JSONObject();
-            json.put("data", numbers.all());
-            json.put("average", numbers.average()); 
-         return json.toString();
+            json.put("data", number.all());
+            json.put("average", number.average());
+            return json.toString();
         });
-
-        get("/numeros/:id", (req, res) -> {
+        get("/numeros/:id", (req, res) -> { // validar que id sea int
             res.type("application/json");
-            int id = Integer.parseInt(req.params("id"));
-         return numbers.all().get(id).toString();
+            String rawId = req.params("id");
+            int id = Integer.parseInt(rawId);
+            return number.get(id);
         });
-
         post("/numeros", (req, res) -> {
             res.type("application/json");
-            JSONObject json =new JSONObject(req.body());
-            int value = json.getInt("numero");
-            numbers.add(value);
+            JSONObject json = new JSONObject(req.body());
+            int value = Integer.parseInt(json.getString("nota"));
+            number.add(value);
             JSONObject jsonResponse = new JSONObject();
-            jsonResponse.put("data", numbers.all());
-            jsonResponse.put("average", numbers.average());
+            jsonResponse.put("data", number.all());
+            jsonResponse.put("average", number.average());
             return jsonResponse;
         });
-         
     }
-
+        
     private static void enableCors() {
         options("/*", (request, response) -> {
             String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
