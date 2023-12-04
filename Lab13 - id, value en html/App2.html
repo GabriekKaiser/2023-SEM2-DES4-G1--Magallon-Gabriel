@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h1>Id, Notas Y su AVG</h1>
+    <form action="" method="post">
+        Numbers: <input type="text" name="input" id="input">
+    </form>
+    <div id="response"></div>
+    <script>
+        const form = document.querySelector('form');
+        const onFormSubmit = (e) =>{
+            e.preventDefault();
+            const input = document.querySelector('#input');
+            const value = input.value;
+            const url = `http://localhost:4567/numeros`;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value: value })
+            })
+                .then(response => response.json())
+                .then(value => {
+                    const response = document.querySelector('#response');
+                    response.innerHTML= JSON.stringify(value);
+                });
+        };
+        form.addEventListener('submit', onFormSubmit);
+    </script>
+</body>
+</html>
