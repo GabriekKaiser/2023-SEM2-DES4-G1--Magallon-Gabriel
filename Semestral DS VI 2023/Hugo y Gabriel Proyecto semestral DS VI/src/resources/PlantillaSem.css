@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap');
+
+* {
+  margin: unset;
+  padding: unset;
+  font-weight: unset;
+  font-size: unset;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #095b8f;
+}
+
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  background-color:#095b8f(216 31% 29%);
+}
+/*intruoducir cantidad*/
+h1 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+/* Introducir valor*/
+input {
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid aquamarine;
+  padding: 0.3rem;
+}
+/* Boton de enviar*/
+button {
+  padding: 0.3rem 1rem;
+  background-color: aquamarine;
+  font-weight: 600;
+  border-radius: 5px;
+  border: unset;
+}
+/*ambos introducir valor y enviar*/
+button, input {
+  font-size: 0.5rem;
+  font-weight: 400;
+}
+
+#regenerate-button {
+    padding: 0.3rem 1rem;
+    background-color: aquamarine;
+    font-weight: 600;
+    border-radius: 5px;
+    border: unset;
+    margin-left: 10px;
+  }
+  
+#query {
+  width: 100%;
+  background-color: #1B3358(200 0% 0%);
+}
+
+#query2 {
+  width: 100%;
+  background-color: #1B3358(200 0% 0%);
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+/*div donde se encuentra el h1 y su input*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+/*div donde se encuentra el button */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Response CSS */
+#response{
+  display: flex;
+  flex-direction: column;
+}
+
+#response > div{
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 3px;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+  .square.highlight span {
+    color: #ffee01; /* Amarillo ocre */
+    background-color: rgb(81, 0, 16); 
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* ... Tu CSS anterior ... */
+
+/* Lista de estructuras generadas */
+#structures-list {
+  list-style: none;
+  padding: 0;
+}
+
+#structures-list li {
+  margin-bottom: 5px;
+}
+
+#structures-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+#structures-list a:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+#response2{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+#response2 >div{
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 3px;
+}
+
+.square2{
+  width: 20px;
+  height: 20px;
+  background-color: rgb(7, 48, 87);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
